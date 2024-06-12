@@ -20,6 +20,7 @@ namespace WpfApp7.AppData
         public string ItemParametr3 { get; set; }
         public string ItemParametr4 { get; set; }
         public string ItemParametr5 { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual ItemCategory ItemCategory { get; set; }
     }

@@ -22,6 +22,7 @@
             <DataGrid x:Name="DGridItem" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding ItemName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Date, StringFormat='dd/MM/yyyy'}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Параметр 2" Width="*" Binding="{Binding ItemCategory.ItemCategoryName}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Параметр 3" Width="*" Binding="{Binding ItemParametr3}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Параметр 4" Width="*" Binding="{Binding ItemParametr4}"></DataGridTextColumn>

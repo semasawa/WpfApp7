@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище user07EntitiesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище user07EntitiesModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ItemID" />
@@ -15,6 +15,7 @@
           <Property Name="ItemParametr3" Type="nvarchar" MaxLength="50" />
           <Property Name="ItemParametr4" Type="nvarchar" MaxLength="50" />
           <Property Name="ItemParametr5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <EntityType Name="ItemCategory">
           <Key>
@@ -78,8 +79,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="user07EntitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -94,6 +94,7 @@
           <Property Name="ItemParametr4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ItemParametr5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ItemCategory" Relationship="Self.FK_Item_ItemCategory" FromRole="Item" ToRole="ItemCategory" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="ItemCategory">
           <Key>
@@ -169,6 +170,7 @@
           <EntitySetMapping Name="Item">
             <EntityTypeMapping TypeName="user07EntitiesModel.Item">
               <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ItemID" ColumnName="ItemID" />
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="ItemParametr2" ColumnName="ItemParametr2" />

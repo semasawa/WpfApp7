@@ -54,6 +54,8 @@ namespace WpfApp7.PageAdmin
                 return;
             }
 
+            _currentItem.Date = DateTime.Now;
+
             if (_currentItem.ItemID == 0)
                 AppConnect.GetContext().Item.Add(_currentItem);
             {
